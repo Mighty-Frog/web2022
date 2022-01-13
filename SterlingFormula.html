@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta name="description" content="斯特灵公式是一条用来取n阶乘近似值的数学公式。一般来说，当n很大的时候，n阶乘的计算量十分大，所以斯特灵公式十分好用。从图中可以看出，即使在n很小的时候，斯特灵公式的取值已经十分准确。 公式为： 从图" />
+    <meta property="og:description" content="斯特灵公式是一条用来取n阶乘近似值的数学公式。一般来说，当n很大的时候，n阶乘的计算量十分大，所以斯特灵公式十分好用。从图中可以看出，即使在n很小的时候，斯特灵公式的取值已经十分准确。 公式为： 从图" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>斯特林公式 ——Stirling公式（取N阶乘近似值) </title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=Dh4enLU0CXZcYseFicXbZhOl1FJy8Au50DAVUu2I50I" />
+    
+    <link id="highlighter-theme-cnblogs" type="text/css" rel="stylesheet" href="/css/hljs/cnblogs.css?v=yKPfCbE6NGwg5Jn8Cm5G98RHufDcX_NIbkGDyVPvWPQ" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/jokerjason/custom.css?v=nalNRZNr4gKCwrIiOBtriP1dS9Y=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey-mobile.min.css?v=MM4QkBDNzquY4s9xTmGzFmRRoS_nQCVUE-vdF9dD-Uk" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/jokerjason/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/jokerjason/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/jokerjason/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 281537;
+        var currentBlogApp = 'jokerjason';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'BlackLowKey';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=rUWkHFHOSV58UOi7ffReS8_ngjwnvr0DR1kGzP996QA"></script>
+    
+    
+    
+</head>
+</h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p style="font-family: Arial; font-size: 14px; line-height: 22px"><span style="color: rgba(0, 128, 0, 1); font-size: 14pt"><span style="font-family: &quot;KaiTi_GB2312&quot;">斯特灵公式<span style="font-family: &quot;KaiTi_GB2312&quot;">是一条用来取n<a style="color: rgba(202, 0, 0, 1); text-decoration: none" title="阶乘" href="http://zh.wikipedia.org/wiki/%E9%9A%8E%E4%B9%98" rel="nofollow" target="_blank"><span style="color: rgba(0, 128, 0, 1)">阶乘</span></a><a class="mw-redirect" style="color: rgba(202, 0, 0, 1); text-decoration: none" title="近似值" href="http://zh.wikipedia.org/wiki/%E8%BF%91%E4%BC%BC%E5%80%BC" rel="nofollow" target="_blank"><span style="color: rgba(0, 128, 0, 1)">近似值</span></a>的<a class="mw-redirect" style="color: rgba(202, 0, 0, 1); text-decoration: none" title="数学" href="http://zh.wikipedia.org/wiki/%E6%95%B8%E5%AD%B8" rel="nofollow" target="_blank"><span style="color: rgba(0, 128, 0, 1)">数学</span></a><a class="mw-redirect" style="color: rgba(202, 0, 0, 1); text-decoration: none" title="公式" href="http://zh.wikipedia.org/wiki/%E5%85%AC%E5%BC%8F" rel="nofollow" target="_blank"><span style="color: rgba(0, 128, 0, 1)">公式</span></a>。一般来说，当n很大的时候，n阶乘的计算量十分大，所以斯特灵公式十分好用。从图中可以看出，即使在n很小的时候，斯特灵公式的取值已经十分准确。</span></span></span></p>
+<p style="font-size: 14px; line-height: 22px; color: rgba(37, 37, 37, 1); font-family: sans-serif"><span style="font-size: 18px"><img style="border: none" src="https://img-blog.csdn.net/20140807103820328?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMjMxMzMzNQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="" width="564" height="438">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>
+<p style="font-family: Arial; font-size: 14px; line-height: 22px"><span style="font-family: &quot;KaiTi_GB2312&quot;; font-size: 18px"><span style="color: rgba(51, 51, 255, 1)">公式为<span style="color: rgba(51, 51, 255, 1)">：<span style="font-family: sans-serif; line-height: 1.5em; color: rgba(37, 37, 37, 1)">&nbsp; &nbsp;<img class="mwe-math-fallback-png-inline tex" style="border: none; vertical-align: middle; display: inline" src="http://upload.wikimedia.org/math/e/6/5/e656c0c9a9bd7e763310012120a00317.png" alt="n! \approx \sqrt{2\pi n}\, \left(\frac{n}{e}\right)^{n}." width="305" height="79"></span></span></span></span></p>
+<p style="font-family: Arial; font-size: 14px; line-height: 22px"><span style="color: rgba(37, 37, 37, 1); font-size: 18px"><span style="font-family: sans-serif">&nbsp;<span style="font-family: &quot;KaiTi_GB2312&quot;">从图中看出，对于足够大的整数n，这两个数互为近似值。更加精确地：<span style="color: rgba(37, 37, 37, 1)"><span style="font-family: &quot;KaiTi_GB2312&quot;"><span style="font-family: sans-serif">&nbsp; &nbsp;</span></span></span></span></span></span></p>
+<p style="font-size: 14px; line-height: 22px; font-family: sans-serif"><span style="line-height: 1.5em; font-size: 18px"><span style="color: rgba(37, 37, 37, 1)">&nbsp;<span style="color: rgba(37, 37, 37, 1)">&nbsp; &nbsp; &nbsp;<img class="mwe-math-fallback-png-inline tex" style="border: none; vertical-align: middle; display: inline; line-height: 21px" src="http://upload.wikimedia.org/math/6/c/f/6cf8c6b4a0e3df9fde5bd5d2524064ac.png" alt="\lim_{n \rightarrow \infty} {\frac{e^n\, n!}{n^n \sqrt{n}}} = \sqrt{2 \pi}." width="316" height="91">&nbsp; &nbsp; &nbsp; &nbsp;或者&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<span style="line-height: 1.5em"><span style="color: rgba(51, 51, 255, 1)"><img class="mwe-math-fallback-png-inline tex" style="border: none; line-height: 1.5em; vertical-align: middle; display: inline" src="http://upload.wikimedia.org/math/5/9/7/597ea5ebaf3e7669de36494cd2554f3e.png" alt="\lim_{n \rightarrow \infty} {\frac{n!}{\sqrt{2\pi n}\, \left(\frac{n}{e}\right)^{n}}} = 1" width="307" height="96"></span></span></span></span></span></p>
+<p style="font-family: sans-serif"><span style="font-size: 18px">&nbsp;</span></p>
+<p style="color: rgba(37, 37, 37, 1)"><span style="font-family: sans-serif; font-size: 18px">&nbsp;<span style="font-family: &quot;KaiTi_GB2312&quot;">这个公式，以及误差的估计，可以推导如下。我们不直接估计n!，而是考虑它的<a class="mw-redirect" style="color: rgba(11, 0, 128, 1); text-decoration: none" title="自然对数" href="http://zh.wikipedia.org/wiki/%E8%87%AA%E7%84%B6%E5%AF%B9%E6%95%B0" rel="nofollow" target="_blank">自然对数</a>：</span></span></p>
+<dl><dd style="font-family: sans-serif; color: rgba(37, 37, 37, 1); line-height: 1.5em"><span style="font-size: 18px">&nbsp; &nbsp;<img class="mwe-math-fallback-png-inline tex" style="border: none; vertical-align: middle; display: inline" src="http://upload.wikimedia.org/math/b/d/e/bde6df6f84382a92e279f5626bed3606.png" alt="\ln(n!) = \ln 1 + \ln 2 + \cdots + \ln n."></span></dd><dd style="font-family: sans-serif; color: rgba(37, 37, 37, 1); line-height: 1.5em"> <br>
+<p style="margin-left: 1.6em; line-height: 1.5em"><span style="font-family: &quot;KaiTi_GB2312&quot;; font-size: 18px">
+按一般方法计算N的阶乘，其时间复杂度为O（N）：&nbsp;&nbsp; &nbsp;<span style="color: rgba(51, 51, 255, 1); line-height: 1.5em">N！=
+ 1 * 2 * 3 * 4 * 5 * ............ * N；</span></span></p>
+<p style="margin-left: 1.6em; line-height: 1.5em"><span style="color: rgba(51, 51, 255, 1); font-size: 18px; line-height: 1.5em">
+<br></span></p>
+
+
+</dd><dd style="line-height: 1.5em"><span style="font-family: &quot;KaiTi_GB2312&quot;; font-size: 18px"><span style="color: rgba(37, 37, 37, 1)">如果要计算N后得到的数字为几位数，则我们可以知道其位数等于<span style="color: rgba(51, 51, 255, 1)">lgN！+1；<br><br><span style="color: rgba(37, 37, 37, 1)">则:&nbsp;<span style="font-family: sans-serif; color: rgba(51, 51, 255, 1)"><img class="mwe-math-fallback-png-inline tex" style="border: none; vertical-align: middle; display: inline" src="http://upload.wikimedia.org/math/b/d/e/bde6df6f84382a92e279f5626bed3606.png" alt="\ln(n!) = \ln 1 + \ln 2 + \cdots + \ln n." width="344" height="27"><br><br><span style="color: rgba(37, 37, 37, 1)"><span style="font-family: &quot;KaiTi_GB2312&quot;">但是当N很大的时候，我们可以通过斯特林公式进行优化：（即Stirling公式）<br><br><span style="font-family: sans-serif"><span style="color: rgba(51, 51, 255, 1)"><img class="mwe-math-fallback-png-inline tex" style="border: none; vertical-align: middle; display: inline" src="http://upload.wikimedia.org/math/e/6/5/e656c0c9a9bd7e763310012120a00317.png" alt="n! \approx \sqrt{2\pi n}\, \left(\frac{n}{e}\right)^{n}." width="218" height="56">（e
+ = 2.718）<br><br><span style="font-family: &quot;KaiTi_GB2312&quot;"><span style="color: rgba(51, 51, 255, 1)">斯特林公式可以用来估算某数的大小，结合lg可以估算某数的位数，或者可以估算某数的阶乘是另一个数的倍数。<br></span></span></span></span></span></span></span></span></span></span></span></dd><dd style="color: rgba(37, 37, 37, 1); line-height: 1.5em"><span style="font-family: &quot;KaiTi_GB2312&quot;; font-size: 18px">
+<br></span></dd><dd style="line-height: 1.5em"><span style="color: rgba(51, 51, 255, 1); font-size: 18px"><span style="font-family: &quot;KaiTi_GB2312&quot;">例题：<span style="font-family: sans-serif">&nbsp;&nbsp;<a style="color: rgba(202, 0, 0, 1); text-decoration: none; font-family: sans-serif" href="http://acm.hdu.edu.cn/showproblem.php?pid=1018" rel="nofollow" target="_blank">http://acm.hdu.edu.cn/showproblem.php?pid=1018</a><br></span></span></span></dd><dd style="line-height: 1.5em"><span style="color: rgba(51, 51, 255, 1); font-size: 18px"><span style="color: rgba(51, 51, 255, 1)"><span style="font-family: &quot;KaiTi_GB2312&quot;">题目给出的N的范围是: 1&lt;= N &lt;=&nbsp;10<sup>7 &nbsp;</sup></span></span></span>
+<p style="line-height: 1.5em"><span style="color: rgba(51, 51, 255, 1); font-size: 18px"><sup><span style="font-family: &quot;KaiTi_GB2312&quot;">用普通方法肯定算不出N的阶乘后的出的数字位数，但运用斯特林公式则很好解决.</span></sup></span></p>
+<p style="line-height: 1.5em"><span style="color: rgba(51, 51, 255, 1); font-size: 18px"><sup><span style="font-family: &quot;KaiTi_GB2312&quot;">&nbsp;</span></sup></span></p>
+<p style="line-height: 1.5em"><span style="font-size: 18px">&nbsp;</span></p>
+<p style="color: rgba(51, 51, 51, 1); font-family: Arial; font-size: 14px; line-height: 26px"><span style="font-size: 18px">
+<strong><span style="color: rgba(255, 0, 0, 1)">Stirling 公式</span></strong></span></p>
+<p style="color: rgba(51, 51, 51, 1); font-family: Arial; font-size: 14px; line-height: 26px; text-align: center"><span style="font-size: 18px">
+<img style="border: none" src="https://img-blog.csdn.net/20150623213226157?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZnV5ZW0=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="" width="301" height="119"><br></span></p>
+<p style="color: rgba(51, 51, 51, 1); font-family: Arial; font-size: 14px; line-height: 26px"><span style="font-size: 18px">
+即：</span></p>
+<p style="color: rgba(51, 51, 51, 1); font-family: Arial; font-size: 14px; line-height: 26px; text-align: center"><span style="font-size: 18px">
+<img src="https://upload.wikimedia.org/math/e/6/5/e656c0c9a9bd7e763310012120a00317.png" alt="" width="285" height="73"><br></span></p>
+<p style="color: rgba(51, 51, 51, 1); font-family: Arial; font-size: 14px; line-height: 26px"><span style="font-size: 18px">
+&nbsp; &nbsp; 
+Stirling公式的意义在于：当n足够大时，n!计算起来十分困难，虽然有很多关于n!的等式，但并不能很好地对阶乘结果进行估计，尤其是n很大之后，误差将会非常大。但利用Stirling公式可以将阶乘转化成幂函数，使得阶乘的结果得以更好的估计。而且n越大，估计得越准确。</span></p>
+<span style="color: rgba(51, 51, 255, 1); font-size: 18px">
+<span style="color: rgba(51, 51, 255, 1)"><span style="font-family: &quot;KaiTi_GB2312&quot;">
+<br></span></span></span>
+<p style="line-height: 1.5em"><span style="font-size: 18px">&nbsp;</span></p>
+<p style="color: rgba(51, 51, 51, 1); font-family: Arial; font-size: 14px; line-height: 26px"><span style="font-size: 18px">
+利用Stirling公式求解n!的位数：易知整数n的位数为[lgn]+1。利用Stirling公式计算n!结果的位数时，可以两边取对数，得:</span></p>
+<p style="color: rgba(51, 51, 51, 1); font-family: Arial; font-size: 14px; line-height: 26px; text-align: center"><span style="font-size: 18px">
+<img style="border: none" src="https://img-blog.csdn.net/20150623213936113?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZnV5ZW0=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br></span></p>
+<p style="color: rgba(51, 51, 51, 1); font-family: Arial; font-size: 14px; line-height: 26px"><span style="font-size: 18px">
+故n!的位数为：</span></p>
+<p style="color: rgba(51, 51, 51, 1); font-family: Arial; font-size: 14px; line-height: 26px; text-align: center"><span style="font-size: 18px">
+<img style="border: none" src="https://img-blog.csdn.net/20150623214017403?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZnV5ZW0=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></span></p>
+<p style="color: rgba(51, 51, 51, 1); font-family: Arial; font-size: 14px; line-height: 26px; text-align: left">&nbsp;</p>
+<p style="color: rgba(51, 51, 51, 1); font-family: Arial; font-size: 14px; line-height: 26px; text-align: left"><span style="font-size: 16px">url : https://blog.csdn.net/liangzhaoyang1/article/details/51145807#commentBox</span></p>
+
+</dd></dl>
+</div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">
+
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8GsLOKiGtk1Au0UP1SouGdWr6AHga8dwrocEMprfLXCsEIaCf5pXKKAYzkxIWoJVhr69DnjIoZq2X0IlUJxgJ9jD0desa-6xpUk26kfiENVMP8ClXvQ9Q30sEha0Y_y28QtZxEypFo31Qz7D-wg2e9I" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var kv = getGACustom();
+    if (kv) {
+        gtag('set', kv);
+    }
+    gtag('config', 'UA-476124-1');
+    </script>
+    <script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>
+
+
